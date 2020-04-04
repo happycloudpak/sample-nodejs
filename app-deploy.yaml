@@ -1,0 +1,90 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  annotations:
+    architecture: x86_64
+    authoritative-source-url: registry.access.redhat.com
+    build-date: 2020-01-30T08:16:17.662981
+    commit.stack.appsody.dev/author: user1 <user1@kebhana.com>
+    commit.stack.appsody.dev/committer: user1 <user1@kebhana.com>
+    commit.stack.appsody.dev/contextDir: /skt-nodejs-express
+    commit.stack.appsody.dev/date: Sat Apr 4 17:54:05 2020 +0900
+    commit.stack.appsody.dev/message: test
+    description: This image contains the Kabanero development stack for the Nodejs
+      Express collection
+    distribution-scope: public
+    help: For more information visit https://github.com/sclorg/s2i-nodejs-container
+    image.opencontainers.org/created: "2020-04-05T00:25:22+09:00"
+    k8s.io/description: Node.js 10 available as container is a base platform for building
+      and running various Node.js 10 applications and frameworks. Node.js is a platform
+      built on Chrome's JavaScript runtime for easily building fast, scalable network
+      applications. Node.js uses an event-driven, non-blocking I/O model that makes
+      it lightweight and efficient, perfect for data-intensive real-time applications
+      that run across distributed devices.
+    k8s.io/display-name: Node.js 10
+    maintainer: SoftwareCollections.org <sclorg@redhat.com>
+    name: kabanero/nodejs-express
+    openshift.io/expose-services: 8080:http
+    openshift.io/tags: builder,nodejs,nodejs10
+    redhat.com/build-host: cpt-1008.osbs.prod.upshift.rdu2.redhat.com
+    redhat.com/component: nodejs-10-container
+    redhat.com/deployments-dir: /opt/app-root/src
+    redhat.com/dev-mode: DEV_MODE:false
+    redhat.com/dev-mode.port: DEBUG_PORT:5858
+    redhat.com/license_terms: https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI
+    release: "66"
+    s2i.io/scripts-url: image:///usr/libexec/s2i
+    s2i.openshift.io/scripts-url: image:///usr/libexec/s2i
+    stack.appsody.dev/authors: Chris Bailey <cnbailey@gmail.com>, Neeraj Laad <neeraj.laad@gmail.com>
+    stack.appsody.dev/configured: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/skt-nodejs-express:0.2.10
+    stack.appsody.dev/created: "2020-04-04T20:19:08+09:00"
+    stack.appsody.dev/description: SKT-Express web framework for Node.js
+    stack.appsody.dev/documentation: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express/README.md
+    stack.appsody.dev/licenses: Apache-2.0
+    stack.appsody.dev/revision: db8b3634fea948d67e550071d7337eb6bfbf8c8d-modified
+    stack.appsody.dev/source: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express/image
+    stack.appsody.dev/tag: docker.io/happycloudpak/skt-nodejs-express:0.2.10
+    stack.appsody.dev/title: Node.js Express
+    stack.appsody.dev/url: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express
+    summary: SKT-Image for Kabanero Node.js Express development
+    url: https://access.redhat.com/containers/#/registry.access.redhat.com/ubi8/nodejs-10/images/1-66
+    usage: s2i build <SOURCE-REPOSITORY> ubi8/nodejs-10:latest <APP-NAME>
+    vcs-ref: 6bc1753cc6499a5573f9fac87a839bc3fa7798d2
+    vcs-type: git
+    vendor: Kabanero
+    version: 0.2.10
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: sample-nodejs
+    stack.appsody.dev/id: skt-nodejs-express
+    stack.appsody.dev/version: 0.2.10
+  name: sample-nodejs
+spec:
+  applicationImage: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/sample-nodejs
+  createKnativeService: false
+  expose: true
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /live
+      port: 3000
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  monitoring:
+    labels:
+      k8s-app: sample-nodejs
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /ready
+      port: 3000
+    initialDelaySeconds: 5
+    periodSeconds: 2
+    timeoutSeconds: 1
+  service:
+    annotations:
+      prometheus.io/scrape: "true"
+    port: 3000
+    type: NodePort
+  stack: skt-nodejs-express
+  version: 1.0.0
