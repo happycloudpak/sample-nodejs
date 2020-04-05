@@ -5,16 +5,24 @@ metadata:
     architecture: x86_64
     authoritative-source-url: registry.access.redhat.com
     build-date: 2020-01-30T08:16:17.662981
+    commit.image.appsody.dev/author: user1 <user1@kebhana.com>
+    commit.image.appsody.dev/committer: user1 <user1@kebhana.com>
+    commit.image.appsody.dev/date: Sun Apr 5 00:33:33 2020 +0900
+    commit.image.appsody.dev/message: first commit
     commit.stack.appsody.dev/author: user1 <user1@kebhana.com>
     commit.stack.appsody.dev/committer: user1 <user1@kebhana.com>
     commit.stack.appsody.dev/contextDir: /skt-nodejs-express
-    commit.stack.appsody.dev/date: Sat Apr 4 17:54:05 2020 +0900
+    commit.stack.appsody.dev/date: Sat Apr 4 21:24:03 2020 +0900
     commit.stack.appsody.dev/message: test
     description: This image contains the Kabanero development stack for the Nodejs
       Express collection
     distribution-scope: public
     help: For more information visit https://github.com/sclorg/s2i-nodejs-container
-    image.opencontainers.org/created: "2020-04-05T00:25:22+09:00"
+    image.opencontainers.org/created: "2020-04-05T10:28:04+09:00"
+    image.opencontainers.org/documentation: https://happycloudpak@github.com/happycloudpak/sample-nodejs
+    image.opencontainers.org/revision: cb447f48403ed878288d4a22a75ab9631d623cb0-modified
+    image.opencontainers.org/source: https://happycloudpak@github.com/happycloudpak/sample-nodejs/tree/master
+    image.opencontainers.org/url: https://happycloudpak@github.com/happycloudpak/sample-nodejs
     k8s.io/description: Node.js 10 available as container is a base platform for building
       and running various Node.js 10 applications and frameworks. Node.js is a platform
       built on Chrome's JavaScript runtime for easily building fast, scalable network
@@ -37,13 +45,13 @@ metadata:
     s2i.openshift.io/scripts-url: image:///usr/libexec/s2i
     stack.appsody.dev/authors: Chris Bailey <cnbailey@gmail.com>, Neeraj Laad <neeraj.laad@gmail.com>
     stack.appsody.dev/configured: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/skt-nodejs-express:0.2.10
-    stack.appsody.dev/created: "2020-04-04T20:19:08+09:00"
+    stack.appsody.dev/created: "2020-04-04T21:26:32+09:00"
     stack.appsody.dev/description: SKT-Express web framework for Node.js
     stack.appsody.dev/documentation: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express/README.md
     stack.appsody.dev/licenses: Apache-2.0
-    stack.appsody.dev/revision: db8b3634fea948d67e550071d7337eb6bfbf8c8d-modified
+    stack.appsody.dev/revision: 41fbfc4da0eac8794444e7e90951040b408b6525
     stack.appsody.dev/source: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express/image
-    stack.appsody.dev/tag: docker.io/happycloudpak/skt-nodejs-express:0.2.10
+    stack.appsody.dev/tag: image-registry.openshift-image-registry.svc:5000/kabanero/skt-nodejs-express:0.2.10
     stack.appsody.dev/title: Node.js Express
     stack.appsody.dev/url: https://github.com/kubepia/skt-stack/tree/master/skt-nodejs-express
     summary: SKT-Image for Kabanero Node.js Express development
@@ -60,7 +68,7 @@ metadata:
     stack.appsody.dev/version: 0.2.10
   name: sample-nodejs
 spec:
-  applicationImage: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/sample-nodejs
+  applicationImage: default-route-openshift-image-registry.apps.hcp.darumtech.net/kubepia/sample-nodejs
   createKnativeService: false
   expose: true
   livenessProbe:

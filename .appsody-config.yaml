@@ -1,2 +1,2 @@
 project-name: sample-nodejs
-stack: image-registry.openshift-image-registry.svc:5000/kabanero/skt-nodejs-express:0.2.10
+stack: default-route-openshift-image-registry.apps.hcp.darumtech.net/kabanero/skt-nodejs-express:0.2.10
